@@ -1,0 +1,92 @@
+	<html ng-app="SearchArtist">
+		<link rel="stylesheet" type="text/css" href="/style/main.css"/>
+		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		
+		<script src = "/script/main.js"></script>
+		<title>
+			Search for Artist
+		</title>
+		<body ng-controller="ArtistSearch">
+			<div align="center">
+			<br><br><br><br>
+				<a href="#searchForArtist" class="button"  id="FadeIn" ng-click="FadeIn()">Click here to Log In</a>
+			</div>
+			
+		<div ng-show="isShow">	
+			<table class="tbl_cls">
+	                <tr ng-repeat="item in names">
+	
+	                    <td>{{item.artistName}}</td>
+	                    <td>{{item.trackName}}</td>
+	                    <td>{{item.artworkUrl30}}</td>
+	                    <td>{{item.shortDescription}}</td>
+	                   
+	                </tr>
+	                </table>
+	                <div align="center">
+	                	<a href="#" class="button">Clear</a>
+	                </div>
+	      </div>
+	
+			
+	
+			
+			<div id="searchForArtist">
+	    	<a href="#" class="cancel">&times;</a>
+	    	<br/><br/><br/><br/><br/><br/>
+	    	<table class="table">
+	    		<tr>
+	    			<td>
+	    				<label> Artist Name </label>
+	    			</td>
+	    			&nbsp;
+	    			&nbsp;
+	    			<td>
+	    				<input type="text" ng-model="artName" required/>
+	    			</td>
+	    		</tr>
+	    		<tr>
+	    			<td>
+	    			<span style="color:red" ng-show="isShowArtname">
+	  						Invalid artist name
+	  					</span>
+	  					</td>
+	    		</tr>
+	    		
+	    		
+	    		<tr>
+	    			<td>
+	    				<label> Number of Tracks </label>
+	    			</td>
+	    			&nbsp;
+	    			&nbsp;
+	    			<td>
+	    				<input type="text" ng-model="numOfTracks"/>
+	    			</td>
+	 	   		</tr>
+	 	   		<tr>
+	 	   			<td>
+	 	   		<span style="color:red" ng-show="isShowTrack">
+	  						Invalid number of tracks
+	  					</span>
+	  					</td>
+	  			</tr>
+	   		</table>
+	 
+	    				
+	    	
+	    		<div align="center">
+					<br><br><br><br>
+					<a href="#searchForArtist" class="button" ng-click="searchCall()">Search</a>
+				</div>
+	    	
+	    	
+		</div>
+		
+		<div id="cover" >
+		
+		</div>
+		
+		</body> 
+	</html>
